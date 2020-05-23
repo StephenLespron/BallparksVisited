@@ -86,7 +86,7 @@ module.exports = [
   {
     parkName: "Comerica Park",
     imgURL:
-      "https://i.guim.co.uk/img/media/9008715027da3a0c453d9f1ec30993936ff4cd2d/0_178_3000_1800/master/3000.jpg?width=300&quality=85&auto=format&fit=max&s=990da22c94dbf05ccb1c91eaa3119619",
+      "https://www.generalpartitions.com/wp-content/uploads/2015/11/comerica.jpg",
   },
   {
     parkName: "Kauffman Stadium",
