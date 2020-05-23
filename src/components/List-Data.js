@@ -9,14 +9,17 @@ export default class ListData extends Component {
     };
 
     this.toggleEdit = this.toggleEdit.bind(this);
+    // this.handleUpdate = this.handleUpdate.bind(this);
   }
 
-  toggleEdit(id) {
+  toggleEdit(obj) {
     this.setState({
       isEditing: !this.state.isEditing,
     });
   }
-  handleUpdate(ev) {}
+  // handleUpdate(elem) {
+  //   this.props.UItoElem(elem);
+  // }
 
   render() {
     return (
@@ -25,8 +28,11 @@ export default class ListData extends Component {
           parkVisits={this.props.parkVisits}
           deleteVisit={this.props.deleteVisit}
           isEditing={this.state.isEditing}
-          toggleEdit={this.toggleEdit}
+          toggle={this.toggleEdit}
           userInput={this.props.userInput}
+          handleUpdate={this.props.handleUpdate}
+          updateUI={this.props.updateUI}
+          updateVisit={this.props.editVisit}
         />
       </div>
     );

@@ -10,7 +10,7 @@ export default class List extends Component {
     this.state = {
       parkVisits: [],
       userInput: {
-        parkName: `MLB Ballparks`,
+        parkName: ``,
         date: { month: ``, day: ``, year: `` },
         teams: { home: ``, away: `` },
         notes: ``,
@@ -23,6 +23,7 @@ export default class List extends Component {
     this.deleteVisit = this.deleteVisit.bind(this);
     this.sortList = this.sortList.bind(this);
     this.updateUI = this.updateUI.bind(this);
+    this.handleUpdate = this.handleUpdate.bind(this);
   }
 
   componentDidMount() {
@@ -53,15 +54,15 @@ export default class List extends Component {
     }
     console.table(this.state.userInput);
   }
-  addVisit(newVisitObj) {
+  addVisit() {
     axios
-      .post(`/api/parkVisits`, newVisitObj)
+      .post(`/api/parkVisits`, this.state.userInput)
       .then((res) => this.setState({ parkVisits: res.data }))
       .catch((err) => console.log(err));
 
     this.setState({
       userInput: {
-        parkName: `MLB Ballparks`,
+        parkName: ``,
         date: { month: ``, day: ``, year: `` },
         teams: { home: ``, away: `` },
         notes: ``,
@@ -69,13 +70,35 @@ export default class List extends Component {
       },
     });
   }
-  editVisit(id, updatedBodyObj) {}
+  editVisit() {
+    axios
+      .put(`/api/parkVisits/${this.state.userInput.id}`, this.state.userInput)
+      .then((res) => this.setState({ parkVisits: res.data }))
+      .catch((err) => console.log(err));
+
+    this.setState({
+      userInput: {
+        parkName: ``,
+        date: { month: ``, day: ``, year: `` },
+        teams: { home: ``, away: `` },
+        notes: ``,
+        rating: ``,
+      },
+    });
+  }
   deleteVisit(id) {
     axios
       .delete(`/api/parkVisits/${id}`)
       .then((res) => this.setState({ parkVisits: res.data }))
       .catch((err) => console.log(err));
   }
+
+  handleUpdate(elem) {
+    this.setState({
+      userInput: elem,
+    });
+  }
+
   sortList(crit) {}
 
   render() {
@@ -89,9 +112,12 @@ export default class List extends Component {
         <table className="Table">
           <ListHeader />
           <ListData
+            handleUpdate={this.handleUpdate}
             parkVisits={this.state.parkVisits}
             deleteVisit={this.deleteVisit}
             userInput={this.state.userInput}
+            updateUI={this.updateUI}
+            editVisit={this.editVisit}
           />
         </table>
       </div>

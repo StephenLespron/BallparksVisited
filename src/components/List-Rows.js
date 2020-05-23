@@ -38,7 +38,13 @@ export default function ListRows(props) {
           backgroundColor: "none",
         }}
       >
-        <button className="editDel" onClick={() => props.toggleEdit(elem)}>
+        <button
+          className="editDel"
+          onClick={() => {
+            props.toggle();
+            props.handleUpdate(elem);
+          }}
+        >
           Edit
         </button>
         <button className="editDel" onClick={() => props.deleteVisit(elem.id)}>
@@ -49,7 +55,12 @@ export default function ListRows(props) {
         className="addEditBox"
         style={!props.isEditing ? { display: "none" } : { display: "flex" }}
       >
-        <AddEdit userInput={props.userInput} />
+        <AddEdit
+          userInput={props.userInput}
+          updateUI={props.updateUI}
+          updateVisit={props.updateVisit}
+          toggle={props.toggle}
+        />
       </div>
     </div>
   ));

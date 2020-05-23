@@ -9,8 +9,8 @@ export default function addEdit(props) {
         </h4>
         <button
           onClick={() => {
-            props.addVisit(props.userInput);
-            props.toggleAdd();
+            props.updateVisit();
+            props.toggle();
           }}
           style={{
             height: "90",
@@ -32,7 +32,7 @@ export default function addEdit(props) {
             value={props.userInput.parkName}
             onChange={(ev) => props.updateUI(`parkName`, ev.target.value)}
           >
-            <option value="MLB Ballparks">MLB Ballparks</option>
+            <option value="">MLB Ballparks</option>
             <option value="Camden Yards">Camden Yards</option>
             <option value="Fenway Park">Fenway Park</option>
             <option value="Yankee Stadium">Yankee Stadium</option>
@@ -117,7 +117,7 @@ export default function addEdit(props) {
           <input
             value={props.userInput.teams.away}
             onChange={(ev) => props.updateUI(`away`, ev.target.value)}
-            style={{ width: "150px" }}
+            style={{ width: "150px", textAlign: "center" }}
           />
         </div>
         <div>
@@ -125,7 +125,7 @@ export default function addEdit(props) {
           <input
             value={props.userInput.rating}
             onChange={(ev) => props.updateUI(`rating`, ev.target.value)}
-            style={{ width: "30px" }}
+            style={{ width: "30px", textAlign: "center" }}
           />
         </div>
       </div>

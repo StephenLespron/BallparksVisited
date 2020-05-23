@@ -33,8 +33,9 @@ export default class Options extends Component {
           <AddEdit
             userInput={this.props.userInput}
             updateUI={this.props.updateUI}
-            addVisit={this.props.addVisit}
-            toggleAdd={this.toggleAdd}
+            updateVisit={this.props.addVisit}
+            areWeAdding={this.props.areWeAdding}
+            toggle={this.toggleAdd}
           />
         </div>
         <div className="sbBox">
