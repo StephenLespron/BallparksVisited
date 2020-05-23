@@ -102,7 +102,7 @@ module.exports = {
     }
 
     const updatedVisit = {
-      id: pv_id,
+      id: +pv_id,
       parkName,
       parkImg: ``,
       date,

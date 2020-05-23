@@ -71,6 +71,7 @@ export default class List extends Component {
     });
   }
   editVisit() {
+    console.log(this.state.parkVisits);
     axios
       .put(`/api/parkVisits/${this.state.userInput.id}`, this.state.userInput)
       .then((res) => this.setState({ parkVisits: res.data }))
@@ -85,12 +86,16 @@ export default class List extends Component {
         rating: ``,
       },
     });
+    console.log(this.state.parkVisits);
   }
   deleteVisit(id) {
     axios
-      .delete(`/api/parkVisits/${id}`)
+      .delete(`/api/parkVisits/${+id}`)
       .then((res) => this.setState({ parkVisits: res.data }))
       .catch((err) => console.log(err));
+
+    console.log(id);
+    console.log(this.state.parkVisits);
   }
 
   handleUpdate(elem) {
