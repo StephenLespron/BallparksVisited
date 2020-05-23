@@ -1,0 +1,163 @@
+* {
+  box-sizing: border-box;
+}
+
+.App {
+  text-align: center;
+  background-image: url("https://images.squarespace-cdn.com/content/v1/549f0e83e4b0cddb26c932d3/1461175734134-CR0RWZ6B9ZTG9G7V81G9/ke17ZwdGBToddI8pDm48kCPztTQZpDiZMOuuCfUxiyx7gQa3H78H3Y0txjaiv_0f8dQJ5B5_UOmfycDWklNyB7NVB1TC0aTx3_rbljJ3eoDwLv1ylhc9WxeIva5tjENnOqpeNLcJ80NK65_fV7S1UVbzjyKB192NIOpnAMaEQXjCX36xij8WabKiEuW2iX3UBltQNugx0IX_zMvsek3f7g/baseball_field_grass_field_Wal_1600x1200_wallpaperhi.com.jpg?format=2500w");
+  background-position: center;
+  background-size: initial;
+  background-repeat: no-repeat;
+  background-color: #9b7653;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.App > div {
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Header {
+  -webkit-text-stroke: 2px black;
+  -webkit-text-fill-color: white;
+  font-size: 72px;
+  font-weight: bold;
+  margin-top: 25px;
+}
+
+.Options {
+  display: flex;
+  width: 60vw;
+  justify-content: space-between;
+}
+
+.Table {
+  margin: 15px;
+  width: 60vw;
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: initial;
+  align-items: flex-start;
+  border-collapse: collapse;
+  border-left: 2px solid black;
+  overflow-y: scroll;
+  overflow: visible;
+}
+
+td {
+  border-right: 2px solid black;
+}
+
+.TableHeader {
+  color: white;
+  width: 100%;
+  height: 20px;
+  display: flex;
+  /* justify-content: flex-start; */
+  align-items: center;
+  background-color: darkgreen;
+  border-right: 2px solid black;
+  border-top: 2px solid black;
+}
+
+.TableHeader th {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.width5 {
+  width: 5%;
+}
+
+td.width5 {
+  font-size: 14px;
+}
+
+.width15 {
+  width: 15%;
+}
+
+.width60 {
+  width: 60%;
+}
+
+.width10 {
+  width: 10%;
+}
+
+.width5,
+.width15,
+.width60,
+.width10 {
+  height: 100%;
+}
+
+tr {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(53, 133, 53, 0.822);
+  border-bottom: 2px solid black;
+}
+
+td {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.visitRow {
+  color: white;
+  font-size: 18px;
+  height: 100%;
+}
+
+.visitRow td {
+  height: 100%;
+}
+
+.parkinfo {
+  flex-direction: column;
+}
+
+#listContainer {
+  height: calc(100% - 20px);
+}
+
+td.width60 {
+  overflow: auto;
+  padding: 5px;
+}
+
+.bpImg {
+  height: 80px;
+  width: 120px;
+  border: 1px solid black;
+}
+
+.sbBox {
+  color: white;
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+}
+
+.sbBox p {
+  padding-right: 3px;
+  background-color: darkgreen;
+}
+
+.editDel {
+  margin-left: 5px;
+  width: 50px;
+}
