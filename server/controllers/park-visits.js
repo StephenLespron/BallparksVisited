@@ -21,7 +21,7 @@ const initialVisits = [
   },
   {
     id: 3,
-    parkName: `Minute Maid Park`,
+    parkName: `Great American Ballpark`,
     parkImg: `img.url`,
     date: { year: 2017, month: 10, day: 4 },
     teams: { home: `Astros`, away: `Mariners` },
