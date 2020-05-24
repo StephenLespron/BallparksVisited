@@ -23,7 +23,7 @@ export default class ListData extends Component {
 
   render() {
     return (
-      <div id="listContainer">
+      <tbody id="listContainer">
         <ListRows
           parkVisits={this.props.parkVisits}
           deleteVisit={this.props.deleteVisit}
@@ -34,7 +34,7 @@ export default class ListData extends Component {
           updateUI={this.props.updateUI}
           updateVisit={this.props.editVisit}
         />
-      </div>
+      </tbody>
     );
   }
 }

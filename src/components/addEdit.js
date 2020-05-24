@@ -9,6 +9,7 @@ export default function addEdit(props) {
         </h4>
         <button
           onClick={() => {
+            props.sortList(props.sortCrit);
             props.updateVisit();
             props.toggle();
           }}

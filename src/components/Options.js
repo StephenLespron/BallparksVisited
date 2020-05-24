@@ -6,19 +6,16 @@ export default class Options extends Component {
     super();
     this.state = {
       areWeAdding: false,
-      sortCriteria: ``,
     };
 
     this.toggleAdd = this.toggleAdd.bind(this);
   }
 
-  updateSortCrit(crit) {}
   toggleAdd() {
     this.setState({
       areWeAdding: !this.state.areWeAdding,
     });
   }
-  handleAdd() {}
 
   render() {
     return (
@@ -36,14 +33,16 @@ export default class Options extends Component {
             updateVisit={this.props.addVisit}
             areWeAdding={this.props.areWeAdding}
             toggle={this.toggleAdd}
+            sortCrit={this.props.sortCrit}
+            sortList={this.props.sortList}
           />
         </div>
         <div className="sbBox">
           <p>Sort By:</p>
-          <select>
-            <option>A - Z</option>
-            <option>Date</option>
-            <option>Rating</option>
+          <select onChange={(ev) => this.props.sortList(ev.target.value)}>
+            <option value="Date">Date</option>
+            <option value="A - Z">A - Z</option>
+            <option value="Rating">Rating</option>
           </select>
         </div>
       </div>
