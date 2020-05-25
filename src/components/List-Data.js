@@ -33,6 +33,7 @@ export default class ListData extends Component {
           handleUpdate={this.props.handleUpdate}
           updateUI={this.props.updateUI}
           updateVisit={this.props.editVisit}
+          sortList={this.props.sortList}
         />
       </tbody>
     );

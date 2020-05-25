@@ -81,8 +81,6 @@ module.exports = {
 
     parkVisits.push(newVisit);
 
-    console.log(parkVisits);
-
     updateImgs(newVisit.id);
 
     id++;
@@ -94,8 +92,6 @@ module.exports = {
     const { parkName, date, teams, notes, rating } = req.body;
 
     const index = parkVisits.findIndex((elem) => elem.id === +pv_id);
-
-    console.log(index);
 
     if (index === -1) {
       return res.status(404).send(`No visit listed`);

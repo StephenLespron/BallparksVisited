@@ -156,6 +156,7 @@ export default class List extends Component {
             userInput={this.state.userInput}
             updateUI={this.updateUI}
             editVisit={this.editVisit}
+            sortList={this.sortList}
           />
         </table>
       </div>

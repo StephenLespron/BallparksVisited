@@ -60,6 +60,7 @@ export default function ListRows(props) {
           updateUI={props.updateUI}
           updateVisit={props.updateVisit}
           toggle={props.toggle}
+          sortList={props.sortList}
         />
       </div>
     </div>
